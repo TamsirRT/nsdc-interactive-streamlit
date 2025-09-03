@@ -19,7 +19,7 @@ st_autorefresh(interval = 10 * 1000, key="data_refresh")  # Refresh every 10 sec
 #     st.info("Please upload a CSV to continue.")
 #     st.stop()
 df = pd.read_csv(gsheet_url)
-df
+df = df.drop(columns=["Timestamp", "TU ID"])
 
 # --- Sticky Header & Filters ---
 st.markdown("""
